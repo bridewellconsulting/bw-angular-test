@@ -3,4 +3,4 @@
 This project is for a coding test in Bridewell interviews
 If you are a candidate, instructions will be provided separately via email
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/fork/github/torbenr/bw-angular-test)
+[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/fork/github/bridewellconsulting/bw-angular-test)
