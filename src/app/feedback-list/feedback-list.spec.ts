@@ -2,7 +2,6 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { of } from 'rxjs';
 import { FEEDBACK_SERVICE_TOKEN } from '../interfaces/feedback.service.interface';
 import { Feedback } from '../models/feedback.model';
-import { FeedbackService } from '../services/feedback.service';
 import { FeedbackList } from './feedback-list';
 
 const mockFeedbacks: Feedback[] = [
@@ -23,7 +22,7 @@ describe('FeedbackList', () => {
         await TestBed.configureTestingModule({
             imports: [FeedbackList],
             providers: [
-                { provide: FEEDBACK_SERVICE_TOKEN, useExisting: FeedbackService }
+                { provide: FEEDBACK_SERVICE_TOKEN, useValue: mockService },
             ]
         }).compileComponents();
         fixture = TestBed.createComponent(FeedbackList);
@@ -43,8 +42,8 @@ describe('FeedbackList', () => {
         expect(html.textContent).toContain('Okay');
         expect(html.textContent).toContain('Bad');
         // Assert user names
-        expect(html.textContent).toContain('Al1ce');
-        expect(html.textContent).toContain('Bab');
-        expect(html.textContent).toContain('Carole');
+        expect(html.textContent).toContain('Alice');
+        expect(html.textContent).toContain('Bob');
+        expect(html.textContent).toContain('Carol');
     });
 });

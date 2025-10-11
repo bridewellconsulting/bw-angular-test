@@ -12,11 +12,11 @@ export class FeedbackService implements IFeedbackService {
     { id: 3, user: 'Charlie', comment: 'Not satisfied.', sentiment: 'negative', date: '2025-08-27' }
   ];
 
-  private feedbackSubject: BehaviorSubject<Feedback[]> = new BehaviorSubject<Feedback[]>([]);
+  private feedbackSubject: BehaviorSubject<Feedback[]> = new BehaviorSubject<Feedback[]>(this.feedbackEntries);
   feedbacks$ = this.feedbackSubject.asObservable();
 
   getFeedback(): Observable<Feedback[]> {
-    return this.feedbacks$;
+    return this.feedbackSubject.asObservable();
   }
 
   addFeedback(feedback: Feedback) {
